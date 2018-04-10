@@ -1,0 +1,7 @@
+# Data files
+*.csv
+*.txt
+*.jpg
+
+# Directories
+Data/
