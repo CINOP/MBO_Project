@@ -5,3 +5,7 @@
 
 # Directories
 Data/
+
+
+# Except source code files
+!*.txt
