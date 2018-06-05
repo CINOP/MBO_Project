@@ -1,0 +1,12 @@
+# Data files
+*.csv
+*.txt
+*.jpg
+*.pickle
+
+# Directories
+data/
+
+
+# Except source code files
+!*.txt
