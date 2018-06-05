@@ -6,6 +6,7 @@ from dash.dependencies import Input, Output
 import dash_core_components as dcc
 import dash_html_components as html
 from utils_map import CustomIndexDash, filter_location_df, create_buttons, create_edges, create_vertices
+
 app = CustomIndexDash(
     __name__,
     # Serve any files that are available in the `static` folder
@@ -26,7 +27,7 @@ with open('data\enrolled_per_year.pickle', 'rb') as file:
     enrolled_per_year = pickle.load(file)
 with open('data/tokens.pickle', 'rb') as file:
     tokens = pickle.load(file)
-print(tokens)
+
 mapbox_access_token = tokens['MAPBOX_TOKEN']
 COLORSCALE_NORMAL = ['#fac1b7', '#f7fcb9', '#d9f0a3', '#addd8e', '#78c679', '#41ab5d', '#238443', '#006837', '#99d8c9']
 COLORSCALE_DROPOUTS = ['#ffffcc', '#ffeda0', '#fed976', '#feb24c', '#fd8d3c', '#fc4e2a', '#e31a1c', '#bd0026',
@@ -46,7 +47,7 @@ layout = dict(
     backgroundcolor=BACKGROUND,
     titlefont=dict(color='#CCCCCC', size='14'),
     margin=dict(
-        l=55,
+        l=55,  # noqa E741
         r=35,
         b=65,
         t=45,
@@ -77,7 +78,7 @@ def label_layout(all_shapes, college_name):
         # backgroundcolor = BACKGROUND,
         titlefont=dict(color='#CCCCCC', size='14'),
         margin=dict(
-            l=35,
+            l=35,  # noqa E741
             r=35,
             b=35,
             t=45
@@ -252,6 +253,7 @@ app.layout = html.Div(
     ],
     className='ten columns offset-by-one',
 )
+
 
 # # In[]:
 # Create callbacks
