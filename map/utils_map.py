@@ -2,7 +2,6 @@ import logging
 import dash
 import numpy as np
 
-
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
@@ -20,10 +19,11 @@ logger.addHandler(handler)
 
 # Helper functions
 def filter_location_df(df):
-        dff = df.copy()
-        dff['BRIN'].replace('', np.nan, inplace=True)
-        dff.dropna(subset=['BRIN'], inplace=True)
-        return dff
+    dff = df.copy()
+    dff['BRIN'].replace('', np.nan, inplace=True)
+    dff.dropna(subset=['BRIN'], inplace=True)
+    return dff
+
 
 def create_vertices(subset, college_name, criteria=None):
     # Axis limits of the graph and x coordinate of the top level of the tree
@@ -137,10 +137,14 @@ def create_buttons(dataframe):
     buttons = buttons.ravel()
     return buttons
 
+
 STYLESHEETS = ['style.css']
+
+
 class CustomIndexDash(dash.Dash):
     """Custom Dash class overriding index() method for local CSS support"""
     global STYLESHEETS
+
     def _generate_css_custom_html(self):
         link_str = '<link rel="stylesheet" href="{}/{}">'
         static_url_path = 'static'
@@ -175,6 +179,3 @@ class CustomIndexDash(dash.Dash):
             </body>
         </html>
         '''
-
-
-
