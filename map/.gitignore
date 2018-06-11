@@ -1,15 +1,5 @@
 # Data files
-*.csv
-*.txt
-*.jpg
-*.pickle
-
-# Directories
-data/
-
-
-# Except source code files
-!*.txt
-
-#mpla
-
+dash
+*.pyc
+.DS_Store
+.env
