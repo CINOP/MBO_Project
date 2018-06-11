@@ -6,6 +6,18 @@ from dash.dependencies import Input, Output
 import dash_core_components as dcc
 import dash_html_components as html
 from utils_map import CustomIndexDash, filter_location_df, create_buttons, create_edges, create_vertices
+import dash
+import dash_auth
+
+
+
+USERNAME_PASSWORD_PAIRS = [
+    ['JamesBond', '007'], ['LouisArmstrong', 'satchmo']
+]
+
+app = dash.Dash()
+auth = dash_auth.BasicAuth(app, USERNAME_PASSWORD_PAIRS)
+server = app.server
 
 app = CustomIndexDash(
     __name__,
@@ -494,4 +506,4 @@ def update_registered_figure(main_graph_hover, selection):
 
 
 if __name__ == '__main__':
-    app.server.run(debug=True, threaded=True)
+    app.run_server(debug=True, threaded=True)
