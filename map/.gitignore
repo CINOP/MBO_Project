@@ -3,3 +3,7 @@ dash
 *.pyc
 .DS_Store
 .env
+
+# Directories
+data/
+
