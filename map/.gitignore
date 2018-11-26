@@ -5,5 +5,9 @@ dash
 .env
 
 # Directories
-data/
+Data/
+
+
+# Except source code files
+!*.txt
 
