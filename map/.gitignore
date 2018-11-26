@@ -3,3 +3,11 @@ dash
 *.pyc
 .DS_Store
 .env
+
+# Directories
+Data/
+
+
+# Except source code files
+!*.txt
+
