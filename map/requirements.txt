@@ -26,7 +26,7 @@ fiona==1.7.11.post1
 fix-yahoo-finance==0.0.21
 Flask==0.12.2
 Flask-Compress==1.4.0
-Flask-Cors==3.0.4
+Flask-Cors==3.0.9
 Flask-SeaSurf==0.2.2
 gunicorn==19.8.1
 heroku==0.1.4
